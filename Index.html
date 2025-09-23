@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anarquia - Home Studio</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+  body { background:#0a0a0a; color:#fff; text-align:center; }
+  header { padding:20px; background:#000; border-bottom:2px solid #ff0000; position:fixed; width:100%; top:0; z-index:1000; text-align:center; }
+  header h1 { font-size:2rem; color:#ff0000; }
+  nav ul { list-style:none; display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-top:10px; }
+  nav ul li a { color:#fff; text-decoration:none; font-weight:500; transition:0.3s; }
+  nav ul li a:hover { color:#ff0000; }
+  .hamburger { display:none; flex-direction:column; cursor:pointer; margin-top:10px; }
+  .hamburger div { width:25px; height:3px; background:#fff; margin:4px 0; transition:0.3s; }
+  @media(max-width:768px) {
+    nav ul { display:none; flex-direction:column; background:#111; padding:10px; border-radius:10px; margin-top:10px; }
+    nav ul.show { display:flex; }
+    .hamburger { display:flex; }
+  }
+  section { padding:140px 20px 60px 20px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+  section h2 { color:#ff0000; margin-bottom:20px; font-size:2.2rem; border-bottom:2px solid #ff0000; display:inline-block; padding-bottom:5px; }
+  .container { max-width:1200px; width:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; text-align:center; }
+  .cards, .carousel { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; width:100%; }
+  .card { max-width:300px; width:90%; background:#111; border-radius:15px; padding:20px; text-align:center; border:1px solid #ff0000; transition:transform 0.3s, box-shadow 0.3s; margin:0 auto; }
+  .card:hover { transform:translateY(-10px); box-shadow:0 10px 20px rgba(255,0,0,0.5); }
+  .card img { display:block; margin:0 auto; width:120px; height:120px; border-radius:50%; object-fit:cover; border:3px solid #ff0000; box-shadow:0 0 10px #ff0000; }
+  button { display:block; margin:10px auto 0 auto; background:linear-gradient(90deg,#ff0000,#990000); border:none; padding:12px 25px; border-radius:50px; color:#fff; font-weight:bold; cursor:pointer; transition:0.3s; }
+  button:hover { background:linear-gradient(90deg,#990000,#ff0000); }
+  audio { width:90%; margin:10px auto 0 auto; border-radius:10px; display:block; }
+  iframe { border-radius:10px; display:block; margin:0 auto; }
+  footer { text-align:center; padding:20px; background:#000; border-top:2px solid #ff0000; margin-top:40px; }
+  @media(min-width:768px) {
+    .cards, .carousel { flex-direction:row; flex-wrap:wrap; justify-content:center; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Anarquia</h1>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#musicas">Músicas</a></li>
+      <li><a href="#videoclipes">Videoclipes</a></li>
+      <li><a href="#beats">Beats</a></li>
+      <li><a href="#precos">Preços</a></li>
+      <li><a href="#membros">Membros</a></li>
+      <li><a href="#ouca">Ouça</a></li>
+    </ul>
+  </nav>
+  <div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div>
+</header>
+
+<section id="home">
+  <div class="container">
+    <h2>Bem-vindo à Anarquia</h2>
+    <p>A sua team de música independente com beats, gravação e produção completa.</p>
+    <button onclick="window.open('https://youtube.com/@anarquiaofc?si=5syXXP-BFqbiIW_C','_blank')">Ouça Agora</button>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="container">
+    <h2>Sobre a Anarquia</h2>
+    <p>Somos um home studio com produtores, beatmakers e artistas unidos para criar música de qualidade, clipes e beats originais.</p>
+  </div>
+</section>
+
+<section id="musicas">
+  <div class="container">
+    <h2>Músicas</h2>
+    <div class="carousel">
+      <div class="card">Final de semana<audio controls><source src="drop1.mp3" type="audio/mpeg"></audio></div>
+      <div class="card">rockstar<audio controls><source src="drop2.mp3" type="audio/mpeg"></audio></div>
+      <div class="card">Drop 3<audio controls><source src="drop3.mp3" type="audio/mpeg"></audio></div>
+    </div>
+  </div>
+</section>
+
+<section id="videoclipes">
+  <div class="container">
+    <h2>Videoclipes</h2>
+    <div class="carousel">
+      <div class="card"><iframe width="250" height="140" src="https://www.youtube.com/embed/VIDEO_ID1" allowfullscreen></iframe></div>
+      <div class="card"><iframe width="250" height="140" src="https://www.youtube.com/embed/VIDEO_ID2" allowfullscreen></iframe></div>
+      <div class="card"><iframe width="250" height="140" src="https://www.youtube.com/embed/VIDEO_ID3" allowfullscreen></iframe></div>
+    </div>
+  </div>
+</section>
+
+<section id="beats">
+  <div class="container">
+    <h2>Beats</h2>
+    <div class="cards">
+      <div class="card">Beat Aberto<button onclick="window.open('beat_aberto.html','_blank')">Ouvir</button></div>
+      <div class="card">Beat Fechado<button onclick="window.open('beat_fechado.html','_blank')">Comprar</button></div>
+      <div class="card">Beat do Zero<button onclick="window.open('beat_do_zero.html','_blank')">Contato</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="precos">
+  <div class="container">
+    <h2>Preços</h2>
+    <div class="cards">
+      <div class="card">Mixagem: R$350</div>
+      <div class="card">Master: R$150</div>
+      <div class="card">Mixagem + Master: R$450</div>
+      <div class="card">Feat: R$200</div>
+      <div class="card">Videoclipe: R$600</div>
+      <div class="card">Capa de Spotify: R$50</div>
+      <div class="card">Thumbnail de Vídeo: R$50</div>
+      <div class="card">Beat Fechado: R$350</div>
+      <div class="card">Beat Aberto: R$200</div>
+      <div class="card">Beat do Zero: Sob orçamento</div>
+    </div>
+  </div>
+</section>
+
+<section id="membros">
+  <div class="container">
+    <h2>Membros</h2>
+    <div class="cards">
+      <!-- Master Biel -->
+      <div class="card">
+        <a href="masterbiel.html">
+          <img src="master.jpg" alt="Master Biel">
+        </a>
+        <p>Master Biel</p>
+      </div>
+
+      <!-- Noboryfds_ -->
+      <div class="card">
+        <a href="noboryfds.html">
+          <img src="nobory.jpg" alt="noboryfds_">
+        </a>
+        <p>noboryfds_</p>
+      </div>
+
+      <!-- Menorcr_ -->
+      <div class="card">
+        <a href="menorcr.html">
+          <img src="menor.jpg" alt="menorcr_">
+        </a>
+        <p>menorcr_</p>
+      </div>
+
+      <!-- Bigvihzz -->
+      <div class="card">
+        <a href="bigvihzz.html">
+          <img src="big.jpg" alt="bigvihzz">
+        </a>
+        <p>bigvihzz</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ouca">
+  <div class="container">
+    <h2>Ouça Nossos Artistas</h2>
+    <div class="cards">
+      <div class="card">
+        <p>Master Biel</p>
+        <button onclick="window.open('https://open.spotify.com/artist/6BTZl4M35LX877nhd7vvL5?si=5b3t45Z9SJyRvILfdmf40Q','_blank')">Spotify</button>
+        <button onclick="window.open('https://youtube.com/@anarquiaofc?si=5syXXP-BFqbiIW_C','_blank')">YouTube</button>
+      </div>
+      <div class="card">
+        <p>bigvihzz</p>
+        <button onclick="window.open('https://open.spotify.com/intl-pt/artist/6bqIYIXqrieeZrbMTunHnJ','_blank')">Spotify</button>
+        <button onclick="window.open('https://youtube.com/@anarquiaofc?si=5syXXP-BFqbiIW_C','_blank')">YouTube</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Anarquia. Todos os direitos reservados.
+</footer>
+
+<script>
+  // Hamburger menu
+  function toggleMenu() {
+    const nav = document.querySelector('nav ul');
+    nav.classList.toggle('show');
+  }
+</script>
+
+</body>
+</html>
